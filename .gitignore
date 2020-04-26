@@ -1,0 +1,8 @@
+# config
+config.json
+
+# db
+database.json
+
+# vendor
+node_modules
