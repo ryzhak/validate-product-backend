@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const express = require('express');
 const { check, validationResult } = require('express-validator');
 const moment = require('moment');
@@ -10,6 +11,7 @@ const config = require('./config.json');
 const app = express();
 app.set('trust proxy', true);
 app.use(bodyParser.json()); // enable support of JSON-encoded bodies
+app.use(cors({origin: '*'})); // add CORS headers
 
 // init db
 const db = new JsonDB(new JsonDBConfig('database', true));
